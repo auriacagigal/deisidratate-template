@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">deisidratate</string>
+  <string name="register">Register</string>
+  <string name="submit">Submit</string>
+  <string name="notes">Notes</string>
+  <string name="history">Water Consumed Today</string>
+  <string name="type_here_your_notes">Type here your notes</string>
+  <string name="quantity_in_ml">Quantity in ml</string>
+  <string name="registered_successfully">Registered successfully</string>
+  <string name="water">💧 Water</string>
+  <string name="beer">🍺 Beer</string>
+  <string name="coffee">☕️ Coffee</string>
+  <string name="amount_ml">How much did you drink? (ml)</string>
+    <string name="what_did_you_drink">What did you drink?</string>
+    <string-array name="drinks">
+    <item>@string/water</item>
+    <item>@string/beer</item>
+    <item>@string/coffee</item>
+  </string-array>
+</resources>
