@@ -19,4 +19,13 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
   }
 
+  override fun onStart() {
+    super.onStart()
+    binding.nomeBotao.setOnClickListener {
+      // Programa aqui a ação do botão
+      startActivity(Intent(this, RegisterActivity::class.java))
+    }
+  }
+
+
 }
