@@ -8,6 +8,7 @@
     tools:context=".RegisterActivity">
 
 
+<!--
     <Button
         android:id="@+id/botaoFechar"
         android:layout_width="wrap_content"
@@ -17,6 +18,81 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+-->
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/register"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_drink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/what_did_you_drink"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
+    <TextView
+        android:id="@+id/label_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/amount_ml"
+        app:layout_constraintTop_toBottomOf="@id/spinner_drink"/>
+
+    <Spinner
+
+        android:id="@+id/spinner_drink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:entries="@array/drinks"
+        app:layout_constraintTop_toBottomOf="@id/label_drink"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:valueFrom="50"
+        android:valueTo="500"
+        android:stepSize="50"
+        app:labelBehavior="visible"
+        app:layout_constraintTop_toBottomOf="@id/label_amount"/>
+
+    <EditText
+        android:id="@+id/input_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:lines="5"
+        android:inputType="textMultiLine"
+        android:hint="@string/notes"
+        android:gravity="bottom"
+        android:background="@color/material_dynamic_neutral95"
+        app:layout_constraintTop_toBottomOf="@id/slider_amount"/>
+
+    <Button
+
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/submit"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
