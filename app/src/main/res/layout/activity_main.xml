@@ -1,20 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-  <Button
-      android:id="@+id/nomeBotao"
-      android:layout_width="wrap_content"
+  <androidx.appcompat.widget.Toolbar
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/registar"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:title="@string/history"
+      app:titleTextColor="@color/md_theme_light_primaryContainer"
+      android:background="?attr/colorPrimary" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="16dp"
+      android:layout_marginTop="16dp"
+      android:orientation="horizontal"
+      android:gravity="center_vertical">
+
+    <!-- Código do próximo quadro vem para aqui -->
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:max="100"
+        app:indicatorColor="?attr/colorPrimary"
+        app:trackColor="@color/md_theme_light_tertiaryContainer"
+        app:trackCornerRadius="20dp"
+        app:trackThickness="30dp" />
+
+    <TextView
+        android:id="@+id/label_progress"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:text="0/2000 ml"/>
+
+
+
+
+  </LinearLayout>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_water" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        app:tint="@color/md_theme_light_onPrimary"
+        android:backgroundTint="?attr/colorPrimary"
+        app:srcCompat="@drawable/ic_add"/>
+
+  </FrameLayout>
+
+
+
+  <!-- Código do quadro segundo quadro seguinte vem para aqui -->
+
+</LinearLayout>

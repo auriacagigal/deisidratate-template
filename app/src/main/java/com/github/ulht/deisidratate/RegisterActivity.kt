@@ -9,8 +9,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.github.ulht.deisidratate.databinding.ActivityMainBinding
 import com.github.ulht.deisidratate.databinding.ActivityRegisterBinding
+import java.util.Date
 
- class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,7 @@ import com.github.ulht.deisidratate.databinding.ActivityRegisterBinding
              val amount = binding.sliderAmount.value.toInt()
              val notes = binding.inputNotes.text.toString()
 
-             val waterEntry = WaterEntry(drink = drinkType, amount= amount,notes = notes, date = null)
+             val waterEntry = WaterEntry(drink = drinkType, amount= amount,notes = notes, date = Date())
 
              EntriesBook.getInstance().insert(waterEntry)
 

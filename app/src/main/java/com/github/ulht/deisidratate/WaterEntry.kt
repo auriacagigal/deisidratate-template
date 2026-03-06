@@ -6,7 +6,7 @@ import java.util.Date
 class WaterEntry(
     val drink: DrinkType,
     val amount: Int,
-    val date: Date?,
+    val date: Date,
     val notes: String? = null
 ) {
     val dayTime: DayTimeType
